@@ -1,0 +1,26 @@
+[package]
+name = "utf8-ranges"
+version = "1.0.4"  #:version
+authors = ["Andrew Gallant <jamslam@gmail.com>"]
+description = "DEPRECATED. Use regex-syntax::utf8 submodule instead."
+documentation = "https://docs.rs/utf8-ranges"
+homepage = "https://github.com/BurntSushi/utf8-ranges"
+repository = "https://github.com/BurntSushi/utf8-ranges"
+readme = "README.md"
+keywords = ["codepoint", "utf8", "automaton", "range"]
+license = "Unlicense/MIT"
+exclude = ["/ci/*", "/.travis.yml", "/Makefile", "/ctags.rust", "/session.vim", "/sgx/*"]
+
+[badges]
+travis-ci = { repository = "BurntSushi/utf8-ranges" }
+
+[features]
+default = ["mesalock_sgx"]
+mesalock_sgx = ["sgx_tstd"]
+
+[dependencies]
+sgx_tstd = { rev = "v1.1.2", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
+
+[dev-dependencies]
+#quickcheck = { version = "0.8", default-features = false }
+#doc-comment = "0.3"
